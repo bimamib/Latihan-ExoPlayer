@@ -1,11 +1,26 @@
 package com.bima.myexoplayer
 
+import androidx.media3.common.MediaItem
+import androidx.media3.exoplayer.ExoPlayer
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.bima.myexoplayer.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
+
+    private lateinit var binding : ActivityMainBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        binding = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(binding.root)
+
+        val videoItem = MediaItem.fromUri("https://github.com/dicodingacademy/assets/releases/download/release-video/VideoDicoding.mp4")
+
+        val player = ExoPlayer.Builder(this).build().also { exoPlayer ->
+            exoPlayer.setMediaItem(videoItem)
+            exoPlayer.prepare()
+        }
+        binding.playerView.player = player
     }
 }
