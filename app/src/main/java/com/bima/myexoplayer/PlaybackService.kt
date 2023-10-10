@@ -1,12 +1,11 @@
 package com.bima.myexoplayer
 
-import android.app.Service
-import android.content.Intent
-import android.os.IBinder
+import androidx.media3.session.MediaSession
+import androidx.media3.session.MediaSessionService
 
-class PlaybackService : Service() {
+class PlaybackService : MediaSessionService() {
 
-    override fun onBind(intent: Intent): IBinder {
-        TODO("Return the communication channel to the service.")
+    override fun onGetSession(controllerInfo: MediaSession.ControllerInfo): MediaSession? {
+
     }
 }
