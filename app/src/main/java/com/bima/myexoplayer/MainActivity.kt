@@ -18,7 +18,7 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        val videoItem = MediaItem.fromUri("https://github.com/dicodingacademy/assets/releases/download/release-video/VideoDicoding.mp4")
+        /*val videoItem = MediaItem.fromUri("https://github.com/dicodingacademy/assets/releases/download/release-video/VideoDicoding.mp4")
         val audioItem = MediaItem.fromUri("https://github.com/dicodingacademy/assets/raw/main/android_intermediate_academy/bensound_ukulele.mp3")
 
         val player = ExoPlayer.Builder(this).build().also { exoPlayer ->
@@ -26,7 +26,7 @@ class MainActivity : AppCompatActivity() {
             exoPlayer.setMediaItem(audioItem)
             exoPlayer.prepare()
         }
-        binding.playerView.player = player
+        binding.playerView.player = player*/
 
         hideSystemUI()
     }
